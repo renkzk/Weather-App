@@ -24,11 +24,18 @@
 
         <main>
             <div id="general-info">
-                <span id="location"></span>
-                <span id="weather"></span>
+                <div class="location-container">
+                    <img src="./svg/location.svg" alt="" />
+                    <span id="location"></span>
+                </div>
                 <span id="date"></span>
                 <span id="temperature"></span>
             </div>
+            <div class="weather-container">
+                <span id="weather"></span>
+                <img src="./svg/sun.svg" class="weather-svg" alt="" />
+            </div>
+
             <div id="details">
                 <div class="details-container">
                     <label for="feelsLike" class="details-label">Feels Like</label>
@@ -38,11 +45,13 @@
 
                 <div class="details-container">
                     <label for="humidity" class="details-label">Humidity</label>
+                    <img src="./svg/humidity.svg" alt="" class="details-svg" />
                     <span id="humidity"></span>
                 </div>
 
                 <div class="details-container">
                     <label for="windSpeed" class="details-label">Wind Speed</label>
+                    <img src="./svg/windSpeed.svg" alt="" class="details-svg" />
                     <span id="windSpeed"></span>
                 </div>
             </div>
