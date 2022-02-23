@@ -13,15 +13,16 @@ async function getData(city) {
 }
 
 function convertData(data) {
-    // console.log(data)
+    console.log(data)
     let {
         name: city,
         sys: { country },
         weather: [{ description: weather }],
         main: { temp: temperature, feels_like: feelsLike, humidity },
         wind: { speed: windSpeed },
+        coord: { lon, lat },
     } = data
-    return { city, country, weather, temperature, feelsLike, humidity, windSpeed }
+    return { city, country, weather, temperature, feelsLike, humidity, windSpeed, lon, lat }
 }
 
 export { getData }

@@ -1,0 +1,44 @@
+#search-bar {
+    display: flex;
+    position: relative;
+    padding: 0 0.5rem;
+    margin-bottom: 5rem;
+}
+
+#search-bar::after {
+    content: "";
+    position: absolute;
+    bottom: -30%;
+    left: 0;
+    right: 0;
+    background: $white-txt;
+    height: 0.1rem;
+    border-radius: 100rem;
+}
+
+#search-input {
+    background: none;
+    border: none;
+    outline: none;
+    color: $white-txt;
+    width: 90%;
+
+    &::placeholder {
+        color: $white-txt;
+        opacity: 1;
+    }
+}
+#search-svg {
+    fill: white;
+}
+#search-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0 0.5rem;
+    transition: 150ms ease-in-out;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
