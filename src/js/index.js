@@ -5,13 +5,14 @@ let searchInput = document.querySelector("#search-input")
 let searchBar = document.querySelector("#search-bar")
 searchBar.addEventListener("submit", (e) => {
     e.preventDefault()
-    getData(searchInput.value)
+    getCityWeatherData(searchInput.value)
+    searchInput.value = ""
 })
 
-async function getData(city) {
-    let data = await weather.getData(city)
+async function getCityWeatherData(city) {
+    let data = await weather.getCityCoordinates(city)
     console.log(data)
     dom.renderData(data)
 }
 
-getData("Naples")
+getCityWeatherData("Naples")
