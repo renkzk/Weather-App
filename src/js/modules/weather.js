@@ -2,7 +2,7 @@ let apiKey = "f369405c8397d0b1843aaff0d07491df"
 
 async function getCityCoordinates(city) {
     try {
-        let apiLink = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${apiKey}`
+        let apiLink = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${apiKey}`
         let response = await fetch(apiLink, { mode: "cors" })
         let data = await response.json()
         let location = { city: data[0].name, state: data[0].state, country: data[0].country }
