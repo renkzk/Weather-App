@@ -1,9 +1,9 @@
 import { format } from "date-fns"
+import * as weatherIcons from "./weatherIcons"
 
 function renderData(data) {
     let location = document.querySelector("#location")
     let weather = document.querySelector("#weather")
-    let weatherIcon = document.querySelector("#weather-svg")
     let date = document.querySelector("#date")
     let temperature = document.querySelector("#temperature")
     let feelsLike = document.querySelector("#feelsLike")
@@ -24,29 +24,7 @@ function renderData(data) {
         data.weather.description.charAt(0).toUpperCase() + data.weather.description.slice(1)
     weather.textContent = weatherDesc
 
-    switch (data.weather.description) {
-        case "clear sky":
-            weatherIcon.src = "./svg/sun.svg"
-            break
-        case "few clouds":
-            weatherIcon.src = "./svg/brokenClouds.svg"
-            break
-        case "broken clouds":
-            weatherIcon.src = "./svg/brokenClouds.svg"
-            break
-        case "scattered clouds":
-            weatherIcon.src = "./svg/brokenClouds.svg"
-            break
-        case "overcast clouds":
-            weatherIcon.src = "./svg/overcastClouds.svg"
-            break
-        case "light rain":
-            weatherIcon.src = "./svg/lightRain.svg"
-            break
-        case "clear sky":
-            weatherIcon.src = "./svg/sun.svg"
-            break
-    }
+    weatherIcons.render(data.weather.description)
 
     feelsLike.textContent = Math.floor(data.weather.feelsLike) + " °C"
 

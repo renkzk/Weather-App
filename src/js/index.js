@@ -11,7 +11,6 @@ searchBar.addEventListener("submit", (e) => {
 
 async function getCityWeatherData(city) {
     let data = await weather.getCityCoordinates(city)
-    console.log(data)
     dom.renderData(data)
 }
 
